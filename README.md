@@ -1,3 +1,3 @@
-# star-wars-globalis
+# Star Wars page for Globalis
 
-page URL : https://amel-selmane.github.io/star-wars-globalis/
+<u>Page URL</u> : https://amel-selmane.github.io/star-wars-globalis/
