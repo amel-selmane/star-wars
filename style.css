@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+.pageWidth {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.fullWidth {
+    width: 100%;
+    /* To remove white space below full width images */
+    display: block;
+}
+
+.disableScroll {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 780px) {
+    .sidePaddingMobile {
+        padding: 0 32px;
+    }
+}
+
+/*********** TOP NAVBAR ***********/
+
+.pageNav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 55px;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.pageNav .toggle-menu-icon {
+    display: none;
+}
+
+.pageNav .pageNav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.pageNav .pageNav-list li a {
+    font: 14px/22px "Helvetica, Arial, sans-serif";
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.pageNav .pageNav-list li a:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    width: 0;
+    background-color: #fff;
+    transition: width .2s ease-in-out;
+}
+
+.pageNav .pageNav-list li a:hover:after {
+    width: 100%;
+}
+
+@media screen and (max-width: 780px) {
+    .pageNav .toggle-menu-icon {
+        background: unset;
+        border: unset;
+        cursor: pointer;
+        display: block;
+        width: 34px;
+        height: 24px;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 2;
+    }
+
+    .pageNav .toggle-menu-icon::before {
+        content: url(./assets/burger-menu-icon.png);
+    }
+
+    .pageNav .toggle-menu-icon.opened {
+        right: unset;
+        left: 20px;
+        height: 34px;
+    }
+
+    .pageNav .toggle-menu-icon.opened:before {
+        content: url(./assets/close-cross-icon.png);
+    }
+
+    .pageNav .pageNav-list {
+        background-image: url('./assets/background-opened-menu-mobile.jpg');
+        flex-direction: column;
+        justify-content: unset;
+        row-gap: 15px;
+        font-size: 20px;
+        font-family: "Helvetica, Arial, sans-serif";
+        padding-top: 70px;
+        height: 100vh;
+        transform: translateY(-100vh);
+        transition: transform .4s ease-in-out;
+    }
+
+    .pageNav .toggle-menu-icon.opened + .pageNav-list {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+        transform: translateY(0);
+    }
+}
+
+/*********** MAIN BANNER ***********/
+
+.mainBanner {
+    background-image: url(./assets/header-black-stars-background.jpg);
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+
+.mainBanner h1 {
+    max-width: 755px;
+    margin: 0 auto;
+    padding: 125px 0 31px;
+}
+
+@media screen and (max-width: 768px) {
+    .mainBanner h1 {
+        padding: 125px 0 90px;
+    }
+}
+
+/*********** FIRST SECTION ***********/
+
+.section-1 {
+    margin: 100px auto 196px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-1 .articleText {
+    max-width: 380px;
+}
+
+.section-1 .articleText h2, .section-1 .articleText p {
+    font: 18px/22px "Helvetica, Arial, sans-serif";
+}
+
+.section-1 .articleText p {
+    margin-top: 25px;
+}
+
+.section-1 .advertising {
+    position: relative;
+}
+
+.section-1 .advertising img {
+    position: sticky;
+    top: 65px;
+    z-index: -1;
+}
+
+@media screen and (max-width: 780px) {
+    .section-1 .articleText {
+        max-width: unset;
+        text-align: center;
+    }
+
+    .advertising {
+        display: none;
+    }
+
+    .section-1 {
+        margin: 30px auto 218px;
+    }
+}
+
+/*********** SECOND SECTION ***********/
+
+.section-2 {
+    margin: 60px auto;
+}
+
+.section-2 h2 {
+    font: 32px/30px "Helvetica, Arial, sans-serif";
+    text-align: center;
+}
+
+.section-2 article {
+    margin-top: 36px;
+}
+
+.section-2 article img {
+    float: left;
+    margin-right: 20px;
+}
+
+.section-2 article .articleText {
+    font: 16px/24px "Helvetica, Arial, sans-serif";
+}
+
+.section-2 article .articleText ul {
+    margin-top: 18px;
+}
+
+@media screen and (max-width: 780px) {
+    .section-2 {
+        margin: 30px auto;
+    }
+
+    .section-2 article {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .section-2 .articleText {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .section-2 article img {
+        float: unset;
+        margin-right: unset;
+        width: 100%;
+    }
+}
+
+/*********** FOOTER ***********/
+
+footer {
+    background: center / cover no-repeat url(./assets/footer-background-darthVador-desktop.jpg);
+    color: #9B9B9B;
+    padding: 60px 0 71px;
+}
+
+footer .footer-rights {
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+footer .footer-container {
+    margin-top: 40px;
+    font: 14px/30px "Helvetica, Arial, sans-serif";
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-container a {
+    text-decoration: underline;
+}
+
+footer .footer-container ul {
+    flex: 1;
+}
+
+footer .footer-container .footer-socialNetworks {
+    text-transform: uppercase;
+    flex: 1;
+}
+
+footer .footer-container .footer-socialNetworks ul {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 780px) {
+    footer {
+        background-image: url(./assets/footer-background-darthVador-mobile.jpg);
+    }
+
+    footer .footer-container {
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    footer .footer-container ul  {
+        flex: unset;
+        width: 180px;
+    }
+
+    footer .footer-container .footer-socialNetworks {
+        flex: unset;
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        padding: 0 32px;
+    }
+
+    footer .footer-container .footer-socialNetworks ul {
+        justify-content: flex-end;
+    }
+}
